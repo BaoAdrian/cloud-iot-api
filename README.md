@@ -7,3 +7,5 @@ https://iot.mozilla.org/things/
 
 This link shows Amazons IoT Management platform that we could possibly use to manage the devices using AWS.
 https://aws.amazon.com/iot-device-management/
+
+Maybe we can integrate one of these buttons once we get it working. Could do some cool stuff with it. https://aws.amazon.com/iotbutton/ 
