@@ -1,4 +1,4 @@
-# Cloud Based IoT Web API
+# Cloud-Based IoT Web API
 CSC346 Project 2
 
 # Helpful Links
