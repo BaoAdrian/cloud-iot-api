@@ -16,3 +16,16 @@ Maybe we can integrate one of these buttons once we get it working. Could do som
 Here is a tutorial on connecting an IoT device and managing it using their dashboard. Not quite related to what we are trying to do since he is using JavaScript and some Edison device/ Robot Sphere but interesting to see how to interact with the console to 'develop' and 'test' the implementation.
 https://www.youtube.com/watch?v=_0us6NzlaoQ
 
+
+
+# Brainstorm
+<h2> Database </h2>
+- MySQL for database, connected via Amazon RDS to our instances (WIP).
+- Database will be its own instance.
+
+<h2> Servers </h2>
+- EC2 (~)
+
+
+<h2> Web application </h2> 
+- HTML generated through python scripts. 
