@@ -31,7 +31,7 @@ https://www.youtube.com/watch?v=_0us6NzlaoQ
 - HTML generated through python scripts. 
 - Idea: Break the development into stages...  
   <ol>
-  <li>1. Simple button that controls on/off power for the bulb (amazon 'thing')  </li>
-  <li>2. Querying the database for pre-set RBG values (maybe some rgb sliders) </li>
-  <li>3. If possible, configure Amazon Alexa to have programmed commands for colors configs </li>
+  <li>Simple button that controls on/off power for the bulb (amazon 'thing')  </li>
+  <li>Querying the database for pre-set RBG values (maybe some rgb sliders) </li>
+  <li>If possible, configure Amazon Alexa to have programmed commands for colors configs </li>
   </ol>
