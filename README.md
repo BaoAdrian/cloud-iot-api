@@ -20,10 +20,12 @@ https://www.youtube.com/watch?v=_0us6NzlaoQ
 
 # Brainstorm
 <h2> Database </h2>
+https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
 - MySQL for database, connected via Amazon RDS to our instances (WIP).
 - Database will be its own instance.
 
 <h2> Servers </h2>
+https://aws.amazon.com/ec2/
 - EC2 (~)
 
 
