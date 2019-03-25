@@ -46,7 +46,7 @@ https://aws.amazon.com/ec2/
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
   <li>DBName: project2-iot-lightbulb</li>
 
-# Development -Milestones
+# Development - Milestones
 * [x] Create MySQL DB Instance 
 - [x] Link DB Instance to MySQL Workbench
 - [ ] Save important params for access into the python web application
