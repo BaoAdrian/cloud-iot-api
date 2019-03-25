@@ -1,7 +1,19 @@
 # Cloud-Based IoT Web API
-CSC346 Project 2
+Cloud-serviced web application aimed to manage and utilize Internet-of-Things devices using Python, Amazon AWS, and a MySQL Database.
 
 Specifications: https://lecturer-russ.appspot.com/classes/cs346/spring19/projects/proj02.pdf
+
+# Project Description
+There are three main parts for this application. 
+<ol>
+  <li> MySQL Database </li>
+  <li> Amazon EC2 Instances Running Apache Webserver </li>
+  <li> Python/HTML Web Application </li>
+</ol>
+
+Amazon AWS is used to manage the MySQL Database instance using their RDS API as well as the EC2 Instances that will be configured and loaded with our Web application and all required dependencies to perform SQL queries through interactions with the Web application. The web application is developed using python and makes heavy usage of the CGI framework to generate dynamically generate HTML based on the shared state of the instances.
+
+
 
 # Helpful Links
 This link contains an API that we might be able to use to control the state of the lightbulb:
@@ -47,17 +59,25 @@ https://aws.amazon.com/ec2/
   <li>DBName: project2-iot-lightbulb</li>
 
 # Development - Milestones
-* [x] Create MySQL DB Instance 
+Database:
+- [x] Create MySQL DB Instance 
 - [x] Link DB Instance to MySQL Workbench
 - [x] Save important params for access into the python web application
 
+
+Server:
 - [x] Successfully launch Amazon EC2 
 - [ ] Install python application on EC2 instances
   - [ ] Connect DB instance to EC2 instances   
 
+
+Web Application:
 - [ ] HTML Mockup
 - [ ] CGI/Python application that generates HTML
   - [ ] On/Off swith
   - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider
   - [ ] Possible integration with Amazon Alexa
 
+
+Miscellaneous:
+- [ ] Figure out if Amazon IoT Management API is required to handle communication between device and web application. (I.E. register device as 'thing' in the API and perform calls to database through interface.
