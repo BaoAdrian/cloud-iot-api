@@ -36,7 +36,7 @@ https://www.youtube.com/watch?v=_0us6NzlaoQ
 <h3> Servers </h3>
 2 EC2 Instance that will have the python/html code installed with all dependencies on them and will point to the RDS DB Instance when connecting to MySQL Database. URL: https://aws.amazon.com/ec2/
 
-<br/>
+<br/><br/>
 
 Setting up the server (utilized the EC2 instance created for Project 2). SSH'd into by first changing directory to the location where my ```key-pair-name.pem```file was located. (Also assuming you have completed the necessary configs described when clicking ```Connect``` next to Instance Actions).
 
