@@ -21,14 +21,10 @@ https://www.youtube.com/watch?v=_0us6NzlaoQ
 
 
 # Brainstorm
-<h2> Database </h2>
-https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
-- MySQL for database, connected via Amazon RDS to our instances (WIP).
-- Database will be its own instance.
-
 <h2> Servers </h2>
 https://aws.amazon.com/ec2/
-- EC2 (~)
+
+- 2 EC2 Instance that will have the python/html code installed with all dependencies on them and will point to the RDS DB Instance when connecting to MySQL Database.
 
 
 <h2> Web application </h2> 
@@ -40,8 +36,12 @@ https://aws.amazon.com/ec2/
   <li>If possible, configure Amazon Alexa to have programmed commands for colors configs </li>
   </ol>
   
-  <h2> Amazon MySQL DB </h2> 
+  
+<h2> Amazon MySQL DB </h2> 
   https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
+- MySQL for database, connected via Amazon RDS to our instances (WIP).
+- Database will be its own instance.
+  
   <li>username: Admin password: project2password</li>
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
 
