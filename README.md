@@ -49,11 +49,11 @@ https://aws.amazon.com/ec2/
 
 # Development
 <h3> Database </h3>
-- [X] Create MySQL DB Instance
-- [X] Link DB Instance to MySQL Workbench
+- [x] Create MySQL DB Instance
+- [x] Link DB Instance to MySQL Workbench
 - [ ] Save important params for access into the python web application
 <h3> Server </h3>
-- [X] Successfully launch Amazon EC2 
+- [x] Successfully launch Amazon EC2 
 - [ ] Install python application on EC2 instances
   - [ ] Connect DB instance to EC2 instances   
 <h3> Web Application </h3>
