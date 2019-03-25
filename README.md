@@ -46,17 +46,16 @@ https://aws.amazon.com/ec2/
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
   <li>DBName: project2-iot-lightbulb</li>
 
-# Development
-<h3> Database </h3>
+# Development -Milestones
 * [x] Create MySQL DB Instance 
 - [x] Link DB Instance to MySQL Workbench
 - [ ] Save important params for access into the python web application
-<h3> Server </h3>
+
 - [x] Successfully launch Amazon EC2 
 - [ ] Install python application on EC2 instances
   - [ ] Connect DB instance to EC2 instances   
-<h3> Web Application </h3>
- [ ] Mockup
+
+- [ ] HTML Mockup
 - [ ] CGI/Python application that generates HTML
   - [ ] On/Off swith
   - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider
