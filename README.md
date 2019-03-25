@@ -32,24 +32,23 @@ https://www.youtube.com/watch?v=_0us6NzlaoQ
 
 
 
-# Brainstorm
-<h2> Servers </h2>
+# Section Details
+<h3> Servers </h3>
 https://aws.amazon.com/ec2/
 
 - 2 EC2 Instance that will have the python/html code installed with all dependencies on them and will point to the RDS DB Instance when connecting to MySQL Database.
 
 
-<h2> Web application </h2> 
-- HTML generated through python scripts. 
-- Idea: Break the development into stages...  
-  <ol>
-  <li>Simple button that controls on/off power for the bulb (amazon 'thing')  </li>
-  <li>Querying the database for pre-set RBG values (maybe some rgb sliders) </li>
-  <li>If possible, configure Amazon Alexa to have programmed commands for colors configs </li>
-  </ol>
+<h3> Web application </h3> 
+HTML generated through python scripts using the CGI framework. 
+Will break the development into stages...  
+
+- [ ] Simple button that controls on/off power for the bulb (amazon 'thing')
+- [ ] Querying the database for pre-set RBG values (maybe some rgb sliders) 
+- [ ] If possible, configure Amazon Alexa to have programmed commands for colors configs
   
   
-<h2> Amazon MySQL DB </h2> 
+<h3> Amazon MySQL DB </h3> 
   https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
 - MySQL for database, connected via Amazon RDS to our instances (WIP).
 - Database will be its own instance.
