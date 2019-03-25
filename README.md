@@ -56,7 +56,7 @@ https://aws.amazon.com/ec2/
 - [ ] Install python application on EC2 instances
   - [ ] Connect DB instance to EC2 instances   
 <h3> Web Application </h3>
-- [ ] Mockup
+ [ ] Mockup
 - [ ] CGI/Python application that generates HTML
   - [ ] On/Off swith
   - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider
