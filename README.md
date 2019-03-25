@@ -35,6 +35,19 @@ https://www.youtube.com/watch?v=_0us6NzlaoQ
 # Section Details
 <h3> Servers </h3>
 https://aws.amazon.com/ec2/
+Setting up the server (utilized the EC2 instance created for Project 2). SSH'd into by first changing directory to the location where my ```key-pair-name.pem```file was located.
+
+Run ```ssh -i "key-pair-name.pem" ec2-user@e< Public DNS (IPv4)>```
+
+Once successfully inside the instance, ran the following install commands to configure the dependencies needed for this project:
+
+```sudo yum install python3```
+```sudo yum install mariadb```
+```sudo yum install mariadb-devel```
+```sudo yum install gcc```
+```sudo yum install python3-devel``` (Required prior to pip3 install command)
+```sudo pip3 install mysqlclient```
+```sudo yum install git```
 
 - 2 EC2 Instance that will have the python/html code installed with all dependencies on them and will point to the RDS DB Instance when connecting to MySQL Database.
 
