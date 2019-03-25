@@ -37,3 +37,7 @@ https://aws.amazon.com/ec2/
   <li>Querying the database for pre-set RBG values (maybe some rgb sliders) </li>
   <li>If possible, configure Amazon Alexa to have programmed commands for colors configs </li>
   </ol>
+  
+  <h2> Amazon MySQL DB </h2> 
+  https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
+  <li>username: Admin password: project2password</li>
