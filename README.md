@@ -53,10 +53,13 @@ https://aws.amazon.com/ec2/
   https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
 - MySQL for database, connected via Amazon RDS to our instances (WIP).
 - Database will be its own instance.
-  
-  <li>username: Admin password: project2password</li>
+
+<ul>  
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
+  <li>username: Admin </li>
+  <li>password: project2password</li>
   <li>DBName: project2-iot-lightbulb</li>
+</ul>
 
 # Development - Milestones
 Database:
