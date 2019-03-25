@@ -48,7 +48,7 @@ https://aws.amazon.com/ec2/
 
 # Development
 <h3> Database </h3>
-- [x] Create MySQL DB Instance [x]
+* [x] Create MySQL DB Instance 
 - [x] Link DB Instance to MySQL Workbench
 - [ ] Save important params for access into the python web application
 <h3> Server </h3>
