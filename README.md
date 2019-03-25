@@ -44,6 +44,7 @@ https://aws.amazon.com/ec2/
   
   <li>username: Admin password: project2password</li>
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
+  <li>DBName: project2-iot-lightbulb</li>
 
 
 # Development
