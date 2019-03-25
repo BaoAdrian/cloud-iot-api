@@ -41,13 +41,13 @@ Run ```ssh -i "key-pair-name.pem" ec2-user@e< Public DNS (IPv4)>```
 
 Once successfully inside the instance, ran the following install commands to configure the dependencies needed for this project:
 
-```sudo yum install python3```
-```sudo yum install mariadb```
-```sudo yum install mariadb-devel```
-```sudo yum install gcc```
-```sudo yum install python3-devel``` (Required prior to pip3 install command)
-```sudo pip3 install mysqlclient```
-```sudo yum install git```
+```sudo yum install python3```<br/>
+```sudo yum install mariadb```<br/>
+```sudo yum install mariadb-devel```<br/>
+```sudo yum install gcc```<br/>
+```sudo yum install python3-devel``` (Required prior to pip3 install command)<br/>
+```sudo pip3 install mysqlclient```<br/>
+```sudo yum install git```<br/>
 
 - 2 EC2 Instance that will have the python/html code installed with all dependencies on them and will point to the RDS DB Instance when connecting to MySQL Database.
 
