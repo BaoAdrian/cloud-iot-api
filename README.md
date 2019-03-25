@@ -49,7 +49,7 @@ https://aws.amazon.com/ec2/
 # Development - Milestones
 * [x] Create MySQL DB Instance 
 - [x] Link DB Instance to MySQL Workbench
-- [ ] Save important params for access into the python web application
+- [x] Save important params for access into the python web application
 
 - [x] Successfully launch Amazon EC2 
 - [ ] Install python application on EC2 instances
