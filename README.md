@@ -43,3 +43,5 @@ https://aws.amazon.com/ec2/
   <h2> Amazon MySQL DB </h2> 
   https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
   <li>username: Admin password: project2password</li>
+  <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
+
