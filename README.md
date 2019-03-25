@@ -11,7 +11,7 @@ There are three main parts for this application.
   <li> Python/HTML Web Application </li>
 </ol>
 
-Amazon AWS is used to manage the MySQL Database instance using their RDS API as well as the EC2 Instances that will be configured and loaded with our Web application and all required dependencies to perform SQL queries through interactions with the Web application. The web application is developed using python and makes heavy usage of the CGI framework to generate dynamically generate HTML based on the shared state of the instances.
+Amazon AWS is used to manage the MySQL Database instance using their RDS Service as well as the EC2 Instances that will be configured and loaded with our Web application and all required dependencies to perform SQL queries through interactions with the Web application. The web application is developed using python and makes heavy usage of the CGI framework to generate dynamically generate HTML based on the shared state of the instances.
 
 
 
