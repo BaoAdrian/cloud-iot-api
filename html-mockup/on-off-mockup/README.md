@@ -9,5 +9,5 @@ same state of the bulb.
 
 
 <p align="center">
-  <img src="On-Off-Mockup.png" width="1500" title="On-Off Mockup">
+  <img src="on-off-mockup.png" width="1500" title="On-Off Mockup">
 </p>
