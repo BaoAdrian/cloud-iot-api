@@ -124,3 +124,14 @@ sudo chmod o+x test-site.py
 ```
 
 Now with all that set up, you can access the output in two different ways. Right in the terminal, you can run `curl http://127.0.0.1/cgi-bin/test-site.py` and it should spit out the HTML for the website. The other way is to check directly in your browser following the same URL in the curl command (`http://127.0.0.1/cgi-bin/test-site.py`). Here, you should see the Hello World HTML text from the python script which confirms its all up and running.
+
+
+# Using HTML Mockups inside the CGI
+
+The python scripts `color-table.py` and `on-off.py` are simple coversions from the HTML Mockup into the python/cgi script that we can use to dynimcally generate our website. The idea here could be that we perform queries on the database and feed in specific parameters to the HTML code that is generated. This could easily be used in our simulation of the light bulb PRIOR to implementing it into the physical device. 
+
+<br/>
+
+What we can do for the simulation is create a webpage that has a picture of a lightbulb that we can change the color of. The python script (for simple testing purposes) can generate random RBG values using the values as parameters to generate a background color for the light bulb. In essence, this would mimic changing the color of the physical light bulb in our future implementation where we feed those parameters to the database AND the physical light bulb so that the physical state is changed and the web application will reflect the shared state when refreshing the page since it will perfrom the query on the database to generate the new HTML page.
+
+
