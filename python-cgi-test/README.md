@@ -117,4 +117,10 @@ print '</html>'
 ```
 As always, save and exit vim editor using `:wq`. 
 
-Now you can access the output in two different ways. Right in the terminal, you can run `curl http://127.0.0.1/cgi-bin/test-site.py` and it should spit out the HTML for the website. The other way is to check directly in your browser following the same URL in the curl command (`http://127.0.0.1/cgi-bin/test-site.py`). Here, you should see the Hello World HTML text from the python script which confirms its all up and running.
+Make sure the python script is executable:
+
+```
+sudo chmod o+x test-site.py
+```
+
+Now with all that set up, you can access the output in two different ways. Right in the terminal, you can run `curl http://127.0.0.1/cgi-bin/test-site.py` and it should spit out the HTML for the website. The other way is to check directly in your browser following the same URL in the curl command (`http://127.0.0.1/cgi-bin/test-site.py`). Here, you should see the Hello World HTML text from the python script which confirms its all up and running.
