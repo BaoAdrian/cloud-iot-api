@@ -21,7 +21,12 @@ When running any of these scripts, they first need to be made executable using `
 Hello World!
 ```
 
-This was working fine, however, when the configs were adjusted to accept .py and .cgi scripts, I could not get past the 500 Internal Server Error or the 403 Forbidden Error despite adjusting permissions, checking error logs (located at ```/var/logs/apache2/error.log```).
+This was working fine, however, when the configs were adjusted to accept .py and .cgi scripts, I could not get past the 500 Internal Server Error or the 403 Forbidden Error despite adjusting permissions, checking error logs (located at ```/var/logs/apache2/error.log```). Here are some of the various commands run to attempt to fix the executable/permission issues: <br/>
+```sudo chmod +x <script_name>``` <br/>
+```sudo chmod a+x <script_name>``` <br/>
+```sudo chmod a+r <script_name>``` <br/>
+
+
 
 # Current State
 
