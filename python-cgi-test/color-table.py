@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+import cgitb
+cgitb.enable()
+print("Content-Type: text/html;charset=utf-8")
+
+print "Content-type:text/html\r\n\r\n"
+print '<html>'
+print '<head>'
+print '<title>On-Off Mockup with CGI</title>'
+print '</head>'
+
+print """<body>
+		<br/>
+		<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
+		<h2 align="center"> On/Off Mockup </h2>
+		<br/>
+
+		<p align="center">
+		<button type="button" align="left" style="height:150px; width:150px; background:rgb(255,0,0); font-size:24px;">Red</button>
+		<button type="button" align="center" onclick="window.location.href = 'https://www.google.com';" style="height:150px; width:150px; background:rgb(0,255,0); font-size:24px;">Green</button>
+		<button type="button" align="right"style="height:150px; width:150px; background:rgb(0,0,255); font-size:24px;">Blue</button>
+		</p>
+
+		<p align="center">
+                <button type="button" align="left" style="height:150px; width:150px; background:rgb(255,127,80); font-size:24px;">Orange</button>
+                <button type="button" align="center" style="height:150px; width:150px; background:rgb(147,112,219); font-size:24px;">Purple</button>
+                <button type="button" align="right"style="height:150px; width:150px; background:rgb(255,255,0); font-size:24px;">Yellow</button>
+                </p>
+	
+		<p align="center">
+                <button type="button" align="left" style="height:150px; width:150px; background:rgb(0,206,209); font-size:24px;">Turquoise</button>
+                <button type="button" align="center" style="height:150px; width:150px; background:rgb(128,0,0); font-size:24px;">Maroon</button>
+                <button type="button" align="right"style="height:150px; width:150px; background:rgb(255,255,255); font-size:24px;">Random</button>
+                </p>
+
+
+	</body>"""
+
+print '</html>'
+
