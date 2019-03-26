@@ -1,4 +1,4 @@
-# On Off Mockup
+# On-Off Mockup
 
 Possibly the most basic mockup for a website that contains two buttons controlling the on-off functionality of the lightbulb.
 
