@@ -91,7 +91,7 @@ Server:
 
 
 Web Application:
-- [ ] HTML Mockup
+- [x] HTML Mockup
 - [ ] CGI/Python application that generates HTML
   - [ ] On/Off swith
   - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider
