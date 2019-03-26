@@ -2,7 +2,7 @@
 
 *Note that the following was done on a machine running Ubuntu 18.04*
 
-URL provided in specifications for setup: http://httpd.apache.org/docs/2.2/howto/cgi.html
+URL provided in specifications for setup: http://httpd.apache.org/docs/2.2/howto/cgi.html <br/>
 This URL tutorial worked for me: https://tasdikrahman.me/2015/09/30/Running-CGI-Scripts-on-Apache2-Ubuntu/
 
 
@@ -15,7 +15,7 @@ serve-cgi-bin.conf -> ```/etc/apache2/conf-available/serve-cgi-bin.conf```<br/>
 
 
 <h2> apache2.conf </h2>
-First, you need to modify ```apache2.conf``` using ```sudo vim /etc/apache2/apache.conf``` and pasting the following code at the bottom of that config file.
+First, you need to modify apache2.conf using ```sudo vim /etc/apache2/apache.conf``` and pasting the following code at the bottom of that config file.
 
 ```
 ###################################################################
@@ -31,7 +31,7 @@ Note the ```ScriptAlias``` directive here which is telling apache to look for al
 
 
 <h2> serve-cgi-bin.conf </h2>
-The next step is to modify the ```serve-cgi-bin.conf``` config file. This is similar to what was done above where you run ```sudo vim /etc/apache2/conf-available/serve-cgi-bin.conf``` and paste the following into the config file:
+The next step is to modify the serve-cgi-bin.conf config file. This is similar to what was done above where you run ```sudo vim /etc/apache2/conf-available/serve-cgi-bin.conf``` and paste the following into the config file:
 
 ```
 <IfModule mod_alias.c>
@@ -66,11 +66,11 @@ The next step is to modify the ```serve-cgi-bin.conf``` config file. This is sim
 Save and exit the vim editor with ```:wq```.
 
 
-Note here that the Directory that we have our AllowOverride and Options Directives is in fact the one we added earlier in the ```apache2.conf``` config file. It is also important to restart the Apache Webserver to pick up the changes we made above so run ```sudo service apache2 restart``` and proceed to the next step.
+Note here that the Directory that we have our AllowOverride and Options Directives is in fact the one we added earlier in the apache2.conf config file. It is also important to restart the Apache Webserver to pick up the changes we made above so run ```sudo service apache2 restart``` and proceed to the next step.
 
 
 <h2> Creating Directory and Testing first site </h2>
-Assuming the above has been sucessfully implemented, you can create the directory we set Apache to look for. Do this by running ```sudo mkdir /var/www/cgi-bin``` and ```cd``` into that directory. Now you can create a simple test python script that uses cgi. Run ```sudo vim test-site.py``` and insert the following 'Hello World' script:
+Assuming the above has been sucessfully implemented, you can create the directory we set Apache to look for. Do this by running ```sudo mkdir /var/www/cgi-bin``` and cd into that directory. Now you can create a simple test python script that uses cgi. Run ```sudo vim test-site.py``` and insert the following 'Hello World' script:
 
 ```python
 #!/usr/bin/env python
