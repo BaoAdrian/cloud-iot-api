@@ -15,7 +15,7 @@ serve-cgi-bin.conf -> ```/etc/apache2/conf-available/serve-cgi-bin.conf```<br/>
 
 
 <h2> apache2.conf </h2>
-First, you need to modify `apache2.conf` using `sudo vim /etc/apache2/apache.conf` and pasting the following code at the bottom of that config file.
+First, you need to modify apache2.conf using sudo vim /etc/apache2/apache.conf and pasting the following code at the bottom of that config file.
 
 ```
 ###################################################################
@@ -31,7 +31,7 @@ Note the `ScriptAlias` directive here which is telling apache to look for all cg
 
 
 <h2> serve-cgi-bin.conf </h2>
-The next step is to modify the `serve-cgi-bin.conf` config file. This is similar to what was done above where you run `sudo vim /etc/apache2/conf-available/serve-cgi-bin.conf` and paste the following into the config file:
+The next step is to modify the serve-cgi-bin.conf config file. This is similar to what was done above where you run sudo vim /etc/apache2/conf-available/serve-cgi-bin.conf and paste the following into the config file:
 
 ```
 <IfModule mod_alias.c>
