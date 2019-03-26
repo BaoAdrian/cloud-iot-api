@@ -16,7 +16,8 @@ serve-cgi-bin.conf -> ```/etc/apache2/conf-available/serve-cgi-bin.conf```<br/>
 
 <h2> apache2.conf </h2>
 First, you need to modify apache2.conf using 
-```bash
+
+```
 sudo vim /etc/apache2/apache.conf
 ```
 
@@ -39,7 +40,7 @@ Note the `ScriptAlias` directive here which is telling apache to look for all cg
 <h2> serve-cgi-bin.conf </h2>
 The next step is to modify the serve-cgi-bin.conf config file. This is similar to what was done above where you run 
 
-```bash
+```
 sudo vim /etc/apache2/conf-available/serve-cgi-bin.conf
 ```
 
@@ -83,13 +84,14 @@ Note here that the Directory that we have our `AllowOverride` and `Options` Dire
 
 <h2> Creating Directory and Testing first site </h2>
 Assuming the above has been sucessfully implemented, you can create the directory we set Apache to look for. Do this by running 
-```bash
+
+```
 sudo mkdir /var/www/cgi-bin
 ```
 
 and cd into that directory. Now you can create a simple test python script that uses cgi. Run:
 
-```bash
+```
 sudo vim test-site.py 
 ```
 
