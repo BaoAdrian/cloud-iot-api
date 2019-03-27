@@ -1,16 +1,23 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
+import random
 import cgitb
 cgitb.enable()
 print("Content-Type: text/html;charset=utf-8")
 
-print "Content-type:text/html\r\n\r\n"
-print '<html>'
-print '<head>'
-print '<title>On-Off Mockup with CGI</title>'
-print '</head>'
+print("Content-type:text/html\r\n\r\n")
+print('<html>')
+print('<head>')
+print('<title>On-Off Mockup with CGI</title>')
+print('</head>')
 
-print """<body>
+# Generate RGB for random color
+rand_red = random.randint(0, 255)
+rand_green = random.randint(0, 255)
+rand_blue = random.randint(0, 255)
+
+
+print("""<body>
 		<br/>
 		<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
 		<h2 align="center"> On/Off Mockup </h2>
@@ -31,11 +38,11 @@ print """<body>
 		<p align="center">
                 <button type="button" align="left" style="height:150px; width:150px; background:rgb(0,206,209); font-size:24px;">Turquoise</button>
                 <button type="button" align="center" style="height:150px; width:150px; background:rgb(128,0,0); font-size:24px;">Maroon</button>
-                <button type="button" align="right"style="height:150px; width:150px; background:rgb(255,255,255); font-size:24px;">Random</button>
+                <button type="button" align="center" style="height:150px; width:150px; background:rgb(%d,%d,%d); font-size:24px;">Random</button>
                 </p>
 
 
-	</body>"""
+	</body>""" % (rand_red, rand_green, rand_blue))
 
-print '</html>'
+print('</html>')
 
