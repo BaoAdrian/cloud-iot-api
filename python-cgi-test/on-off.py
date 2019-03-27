@@ -7,13 +7,13 @@ print("Content-Type: text/html;charset=utf-8")
 print("Content-type:text/html\r\n\r\n")
 print('<html>')
 print('<head>')
-print('<title>On-Off Mockup with CGI</title>')
+print('<title>On-Off</title>')
 print('</head>')
 
 print("""<body>
                 <br/>
                 <h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
-                <h2 align="center"> On/Off Mockup </h2>
+                <h2 align="center"> On/Off </h2>
                 <br/>
 
                 <p align="center">
