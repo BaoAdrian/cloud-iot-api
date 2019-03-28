@@ -94,7 +94,7 @@ Web Application:
 - [x] HTML Mockup
 - [ ] CGI/Python application that generates HTML
   - [ ] On/Off swith
-  - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider
+  - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider (https://www.w3schools.com/howto/howto_js_rangeslider.asp)
   - [ ] Possible integration with Amazon Alexa
 
 
