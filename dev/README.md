@@ -63,6 +63,22 @@ And now these changes will be reflected in the master branch for the rest of the
 
 If someone makes a change to the master branch and your remote repository is 'behind' the master branch, simply run `git pull` which will update your remote repository to the current state of the master branch. 
 
-One drawback is that the files that are inside `/var/www/cgi-bin` will not be updated each time the remote repository is updated so each time a change is made to the master branch and pulled to the remote repo, you will have to copy the scripts that are insde the `dev` folder back over to the `/var/www/cgi-bin` directory by running `cp ./*.py /var/www/cgi-bin`. 
+## Setting up hard links for files in cgi-bin
 
-I believe there is a way to 'symlink' the two files so they both hold the changes but I have yet to figure that out.
+Since we will have two seperate locations inside the instance where we have our python scripts, it would be incredibly tedious to have to keep track of changes made to both sets. By both sets, I mean the scripts inside `/var/www/cgi-bin` and inside the `cloud-iot-api/dev` cloned repo folder. To combat this, you can set HARD LINKS to the files that are in both these folders. This will basically allow for any changes made to one file be immediately reflected on the other. This will allow for us to simply make changes inside our repo rather than having to change directories to the cgi-bin everytime. 
+
+To do this, navigate to the `dev` folder where the original python scripts are. Assuming you have already copied over the scripts to the `/var/www/cgi-bin` folder, you can set the hard link by running the following
+
+```
+sudo ln -f <SCRIPT> /var/www/cgi-bin/<SCRIPT>
+```
+
+For example:
+
+```
+sudo ln -f on-off.py /var/www/cgi-bin/on-off.py
+```
+
+This will link the on-off.py script inside the `dev` folder to the one located in `/var/www/cgi-bin`. The `-f` flag forces the link command to overwrite any script that is already in there (which in our case, we have scripts copied there already so this simply overwrites them with the newly linked files). 
+
+Now any changes made inside the `cloud-iot-api/dev` folder will be reflected in both locations and will also be immediately reflected when refreshing the browser.
