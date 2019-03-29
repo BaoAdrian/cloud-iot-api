@@ -83,4 +83,4 @@ This will link the on-off.py script inside the `dev` folder to the one located i
 
 Now any changes made inside the `cloud-iot-api/dev` folder will be reflected in both locations and will also be immediately reflected when refreshing the browser.
 
-See this StackOverflow answer for more info: https://unix.stackexchange.com/a/295629
+See this StackExchange answer for more info: https://unix.stackexchange.com/a/295629
