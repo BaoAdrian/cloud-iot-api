@@ -63,4 +63,6 @@ And now these changes will be reflected in the master branch for the rest of the
 
 If someone makes a change to the master branch and your remote repository is 'behind' the master branch, simply run `git pull` which will update your remote repository to the current state of the master branch. 
 
-One drawback is that the files that are inside `/var/www/cgi-bin` will not be updated the remote repository is updated so each time a change is made, you will have to copy the scripts that are insde the `dev` folder back over to the `/var/www/cgi-bin` directory by running `cp ./*.py /var/www/cgi-bin`. 
+One drawback is that the files that are inside `/var/www/cgi-bin` will not be updated each time the remote repository is updated so each time a change is made to the master branch and pulled to the remote repo, you will have to copy the scripts that are insde the `dev` folder back over to the `/var/www/cgi-bin` directory by running `cp ./*.py /var/www/cgi-bin`. 
+
+I believe there is a way to 'symlink' the two files so they both hold the changes but I have yet to figure that out.
