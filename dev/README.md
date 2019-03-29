@@ -82,3 +82,5 @@ sudo ln -f on-off.py /var/www/cgi-bin/on-off.py
 This will link the on-off.py script inside the `dev` folder to the one located in `/var/www/cgi-bin`. The `-f` flag forces the link command to overwrite any script that is already in there (which in our case, we have scripts copied there already so this simply overwrites them with the newly linked files). 
 
 Now any changes made inside the `cloud-iot-api/dev` folder will be reflected in both locations and will also be immediately reflected when refreshing the browser.
+
+See this StackOverflow answer for more info: https://unix.stackexchange.com/a/295629
