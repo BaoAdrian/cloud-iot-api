@@ -16,6 +16,19 @@ rand_red = random.randint(0, 255)
 rand_green = random.randint(0, 255)
 rand_blue = random.randint(0, 255)
 
+# Lists to store the values of the RGB settings
+red_config = [255,0,0]
+green_config = [0,255,0]
+blue_config = [0,0,255]
+
+orange_config = [255,127,80]
+purple_config = [147,112,219]
+yellow_config = [255,255,0]
+
+turq_config = [0,206,209]
+maroon_config = [128,0,0]
+random_config = [rand_red, rand_green, rand_blue]
+
 
 print("""<body>
 		<br/>
