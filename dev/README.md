@@ -43,3 +43,23 @@ http://IP_ADDR/cgi-bin/welcome.py
 This should now reflect the live web application in your browser and any changes made within the instance will be immediately reflected in the web application.
 
 
+## Creating a dev environment within the instance
+
+Creating a dev environment inside the instance with Git makes things a lot easier to control the workflow. Instead of having to remove files and re-cloning the repo every time a change is made, you can create a remote repository and manage your changes in the instance. 
+
+To do this, inside your instance, navigate to where you have your cloned repo and `cd` into `cloud-iot-api`. 
+
+Once inside, you can run `git remote add upstream https://github.com/<USERNAME>/cloud-iot-api.git` where you insert your github username. Now that you have a remote repository set up that is linked to the master branch, you can make changes locally on your machine and push them into the main branch with the following steps:
+
+`Make changes`
+
+`git add <FILES CHANGED>`
+
+`git commit -m "<MESSAGE>`
+
+`git push -u origin master`
+
+And now these changes will be reflected in the master branch for the rest of the team to see the changes.
+
+If someone makes a change to the master branch and your remote repository is 'behind' the master branch, simply run `git pull` which will update your remote repository to the current state of the master branch. 
+
