@@ -1,7 +1,20 @@
 #!/usr/bin/env python3
 
+import MySQLdb
+import secrets as secrets
 import cgitb
 cgitb.enable()    
+
+# Setup Connection to Database
+conn = MySQLdb.connect( host 	= secrets.HOST,
+			user 	= secrets.USER,
+			passwd 	= secrets.PASSWORD,
+			db 	= secrets.DB)
+
+# Setup cursor to query database
+cursor = conn.cursor()
+
+
 print("Content-Type: text/html;charset=utf-8")
 
 print("Content-type:text/html\r\n\r\n")
@@ -24,3 +37,11 @@ print("""<body>
 	</body>""")
 
 print('</html>')
+
+
+# Commit changes to Datbase and Cleanup
+conn.commit()
+cursor.close()
+conn.close()
+
+
