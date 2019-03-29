@@ -53,6 +53,7 @@ Once successfully inside the instance, ran the following install commands to con
 ```sudo yum install python3-devel``` (Required prior to pip3 install command)<br/>
 ```sudo pip3 install mysqlclient```<br/>
 ```sudo yum install git```<br/>
+```sudo yum install MySQL-python```<br/>
 
 
 <h3> Web application </h3> 
