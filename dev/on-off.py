@@ -32,9 +32,7 @@ print("""<html>
 			<br/>
 			<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
 			<h2 align="center"> On/Off </h2>
-			<br/>
-			%d
-			<br/>""" % (device_status))
+			<br/>""")
 
 
 
