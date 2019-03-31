@@ -74,7 +74,7 @@ Will break the development into stages...
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
   <li>username: Admin </li>
   <li>password: project2password</li>
-  <li>DBName: project2-iot-lightbulb</li>
+  <li>DBName: project2db</li>
   <li>Linking the EC2 instances to the AWS RDS DB.</li>
    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
 </ul>
