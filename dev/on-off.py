@@ -29,7 +29,6 @@ print("""<html>
 			<br/>
 			""")
 
-device_status = 0
 cursor.execute("""SELECT status FROM power""")
 
 for row in cursor.fetchall():
