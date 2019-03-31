@@ -69,6 +69,8 @@ Will break the development into stages...
   https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
 - MySQL for database, connected via Amazon RDS to our instances (WIP).
 - Database will be its own instance.
+- Linking the EC2 instances to the AWS RDS DB.
+- https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
 
 <ul>  
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
