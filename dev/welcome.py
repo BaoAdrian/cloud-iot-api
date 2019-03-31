@@ -25,7 +25,7 @@ print("""<body>
                 
                 <button type="button" align="center" onclick="window.location.href = 'http://%s/cgi-bin/color-table.py';" style="height:175px; width:250px; background:rgb(50,80,160); font-size:30px;">Color Table</button>
 
-                <button type="button" align="right" onclick="window.location.href = 'https://%s/cgi-bin/slider.py';" style="height:175px; width:250px; background:rgb(220,170,200); font-size:30px;">Dog Memes</button>
+                <button type="button" align="right" onclick="window.location.href = 'http://%s/cgi-bin/slider.py';" style="height:175px; width:250px; background:rgb(220,170,200); font-size:30px;">Dog Memes</button>
                 </p>
 
 	</body>""" % (ip.IP_ADDR, ip.IP_ADDR, ip.IP_ADDR))

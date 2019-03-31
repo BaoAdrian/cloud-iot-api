@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import MySQLdb
 import random
 import cgitb
@@ -50,7 +51,6 @@ if device_status == 1:
 </svg>
 <h1/>
 <center/>
-
 		<p align="center">
 			<button type="button" align="center" onclick="window.location.reload()" style="height:150px; width:150px; background:rgb(220,20,60); font-size:24px;">Turn OFF</button>
 		</p>
@@ -62,8 +62,6 @@ else:
 	print("""
                 <br/>
                 <h2 align="center"> Device is currently OFF </h2>
-
-
 		 <center>
                                 <h1 style="color:black">
                                         <svg align="center" viewBox="0 0 60 55" preserveAspectRatio="xMidYMin slice"
@@ -73,7 +71,6 @@ else:
 </svg>
 <h1/>
 <center/>
-
                 <p align="center">
                         <button type="button" align="center" onclick="window.location.reload()" style="height:150px; width:150px; background:rgb(60,220,60); font-size:24px;">Turn ON</button>
                 </p>
@@ -86,5 +83,3 @@ else:
 conn.commit()
 cursor.close()
 conn.close()
-
-
