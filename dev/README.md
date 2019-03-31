@@ -84,3 +84,15 @@ This will link the on-off.py script inside the `dev` folder to the one located i
 Now any changes made inside the `cloud-iot-api/dev` folder will be reflected in both locations and will also be immediately reflected when refreshing the browser.
 
 See this StackExchange answer for more info: https://unix.stackexchange.com/a/295629
+
+
+## Logging into mysql through the terminal
+
+Inside the EC2 instance with the MySQL RDS Instance up and running, you can use the following command with the credentials for the given database.
+
+```
+mysql -u <USERNAME> -h <HOST/ENDPOINT> -p
+```
+
+It will then prompt for the password and should end up inside the interactive shell for the mysql database.
+
