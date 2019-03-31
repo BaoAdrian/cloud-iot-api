@@ -77,6 +77,8 @@ Will break the development into stages...
   <li>DBName: project2db</li>
   <li>Linking the EC2 instances to the AWS RDS DB.</li>
    - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Tutorials.WebServerDB.CreateWebServer.html
+  <li>W3Schools SQL.</li>
+  -https://www.w3schools.com/sql/
 </ul>
 
 # Development - Milestones
