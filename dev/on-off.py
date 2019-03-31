@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import MySQLdb
 import random
 import cgitb
@@ -7,19 +6,15 @@ cgitb.enable()
 
 
 
-'''
+
 # Setup Connection to Database
-conn = MySQLdb.connect( host 	= secrets.HOST,
-			user 	= secrets.USER,
-			passwd 	= secrets.PASSWORD,
-			db 	= secrets.DB)
+conn = MySQLdb.connect( host 	= 'project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com',
+			user 	= 'Admin',
+			passwd 	= 'project2password',
+			db 	= 'project2db')
 
 # Setup cursor to query database
 cursor = conn.cursor()
-'''
-
-device_status = random.randint(0,1)
-
 
 print("Content-Type: text/html;charset=utf-8")
 print("Content-type:text/html\r\n\r\n")
@@ -34,25 +29,14 @@ print("""<html>
 			<br/>
 			""")
 
+device_status = 0
+cursor.execute("""SELECT status FROM power""")
 
+for row in cursor.fetchall():
+	device_status = int(row[0])
 
-
-# This could be a possible way of handling the website generation 
-# depending on the 'state' of the iot device.
-# The idea here is that each time this script is run, it will 
-# query the database for the respective entry and generate the
-# corresponding database. For example
-
-'''
-# PsuedoCode
-if (GET device_status FROM db) == 'on':
-	Generate ON html page
-else:
-	Generate OFF html page
-'''
-
-# Code
 if device_status == 1:
+	cursor.execute("""UPDATE power SET status=0;""")
 	# Generate Device ON html page
 	print("""
 		<br/>
@@ -74,6 +58,7 @@ if device_status == 1:
 		</body></html>
 		""")
 else:
+	cursor.execute("""UPDATE power SET status=1;""")
 	# Generate Device OFF html page 
 	print("""
                 <br/>
@@ -97,10 +82,10 @@ else:
                 """)
 
 
-'''
+
 # Commit changes to Datbase and Cleanup
 conn.commit()
 cursor.close()
 conn.close()
-'''
+
 
