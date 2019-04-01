@@ -41,26 +41,67 @@ g_conf = form["green"].value
 b_conf = form["blue"].value
 
 # Execute UPDATE on database (note that it is a string)
-cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s""",(r_conf, g_conf, b_conf, location))
+cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s;""",(r_conf, g_conf, b_conf, location))
+
+# Commit updated changes 
+conn.commit()
+
+# Query DB for required values to generate windows
+top_left = [0,0,0] 	# st2
+top_right = [0,0,0]	# st4
+bottom_left = [0,0,0]	# st3
+bottom_right = [0,0,0]	# st5
+middle = [0,0,0]	# st6
+
+cursor.execute("""SELECT * FROM windows;""")
+
+for row in cursor.fetchall():
+	print("""<h1> %s </h1>""" % str(row))
+	if str(row[0]) == "top-left":
+		top_left[0] = int(row[1])
+		top_left[1] = int(row[2])
+		top_left[2] = int(row[3])
+	elif str(row[0]) == "top-right":
+		top_right[0] = int(row[1])
+		top_right[1] = int(row[2])
+		top_right[2] = int(row[3])
+	elif str(row[0]) == "bottom-left":
+		bottom_left[0] = int(row[1])
+		bottom_left[1] = int(row[2])
+		bottom_left[2] = int(row[3])
+	elif str(row[0]) == "bottom-right":
+		bottom_right[0] = int(row[1])
+		bottom_right[1] = int(row[2])
+		bottom_right[2] = int(row[3])
+	elif str(row[0]) == "middle":
+		middle[0] = int(row[1])
+		middle[1] = int(row[2])
+		middle[2] = int(row[3])
+
+for config in top_right:
+	print("""<h1> %s </h1>""" % str(config))
+		
 
 # Print the house
 print("""
 	<div style="text-align:center;">
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1650 1080" style="margin-top:-90px; enable-background:new 0 0 1920 1080; width:70%;" xml:space="preserve">
-<style type="text/css">
+	 viewBox="0 0 1650 1080" style="margin-top:-90px; enable-background:new 0 0 1920 1080; width:70%;" xml:space="preserve">""")
+
+print("""<style type="text/css">
 	.st0{fill:#603813;}
 	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
-	.st2{fill:#0000FF;}
-	.st3{fill:#00FF00;}
-	.st4{fill:#F7931E;}
-	.st5{fill:#29ABE2;}
-	.st6{fill:#FF0000;}
+	.st2{fill:rgb(%d,%d,%d);}
+	.st3{fill:rgb(%d,%d,%d);}
+	.st4{fill:rgb(%d,%d,%d);}
+	.st5{fill:rgb(%d,%d,%d);}
+	.st6{fill:rgb(%d,%d,%d);}
 	.st7{fill:#666666;}
 	.st8{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
 	.st9{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
-</style>
-<g>
+</style>""" % (top_left[0], top_left[1], top_left[2], bottom_left[0], bottom_left[1], bottom_left[2], top_right[0], top_right[1], top_right[2], bottom_right[0], bottom_right[1], bottom_right[2], middle[0], middle[1], middle[2]))
+
+print("""<g>
 	<rect x="459.5" y="424.5" width="702" height="469"/>
 	<path d="M1161,425v468H460V425H1161 M1162,424H459v470h703V424L1162,424z"/>
 </g>
