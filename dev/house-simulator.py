@@ -31,57 +31,99 @@ print("""<html>
 			<br/>
 			<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
 			<h2 align="center"> House Simulator </h2>
-			<br/>""")
+			""")
 
 
 # Pull the status from the FORM
-device_status = form["status"].value
+location = form["location"].value
+r_conf = form["red"].value
+g_conf = form["green"].value
+b_conf = form["blue"].value
 
 # Execute UPDATE on database (note that it is a string)
-cursor.execute("""UPDATE power SET status=%s;""",(device_status))
+cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s""",(r_conf, g_conf, b_conf, location))
 
-# Typecast to int for corresponding html generation below generation
-device_status = int(device_status)
-
-# Generate html depending on the current state of device
-if device_status == 1:
-	# Device currently ON. Generate page to reflect the currently ON state.
-        print("""
-                <br/>
-                <h2 align="center"> Device is currently ON </h2>
-                 <center>
-                                <h1 style="color:yellow">
-                                        <svg align="center" viewBox="0 0 60 55" preserveAspectRatio="xMidYMin slice" style="width: 30%%; padding-bottom: 30%%; height: 1px; overflow: visible">
-  					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lightbulb" class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill-opacity="0.9" fill="currentColor" d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg>
-  					</svg> 
-					</svg> 
-				<h1/> 
-		<center/> 
-		<p align="center"> 
-			<button type="button" align="center" onclick="window.location.href = 'http://%s/cgi-bin/on-off.py?status=0'" style="height:150px; width:150px; background:rgb(220,20,60); font-size:24px;">Turn OFF</button>
-		</p>
-		</body>
-	</html>""" % ip.IP_ADDR)
-
-else:
-
-	# Device currently OFF. Generate page to reflect the currently OFF state.
-	print("""
-		<br/>
-                <h2 align="center"> Device is currently OFF </h2>
-                 <center>
-                                <h1 style="color:black">
-                                        <svg align="center" viewBox="0 0 60 55" preserveAspectRatio="xMidYMin slice" style="width: 30%%; padding-bottom: 30%%; height: 1px; overflow: visible">
-  					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lightbulb" class="svg-inline--fa fa-lightbulb fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M96.06 454.35c.01 6.29 1.87 12.45 5.36 17.69l17.09 25.69a31.99 31.99 0 0 0 26.64 14.28h61.71a31.99 31.99 0 0 0 26.64-14.28l17.09-25.69a31.989 31.989 0 0 0 5.36-17.69l.04-38.35H96.01l.05 38.35zM0 176c0 44.37 16.45 84.85 43.56 115.78 16.52 18.85 42.36 58.23 52.21 91.45.04.26.07.52.11.78h160.24c.04-.26.07-.51.11-.78 9.85-33.22 35.69-72.6 52.21-91.45C335.55 260.85 352 220.37 352 176 352 78.61 272.91-.3 175.45 0 73.44.31 0 82.97 0 176zm176-80c-44.11 0-80 35.89-80 80 0 8.84-7.16 16-16 16s-16-7.16-16-16c0-61.76 50.24-112 112-112 8.84 0 16 7.16 16 16s-7.16 16-16 16z"></path></svg>
-  					</svg>
-					</svg>
-					<h1/>
-		<center/>
-                <p align="center">
-                        <button type="button" align="center" onclick="window.location.href = 'http://%s/cgi-bin/on-off.py?status=1'" style="height:150px; width:150px; background:rgb(60,220,60); font-size:24px;">Turn ON</button>
-                </p>
-                </body>
-	</html>""" % ip.IP_ADDR)
+# Print the house
+print("""
+	<div style="text-align:center;">
+	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1650 1080" style="margin-top:-90px; enable-background:new 0 0 1920 1080; width:70%;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#603813;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st2{fill:#0000FF;}
+	.st3{fill:#00FF00;}
+	.st4{fill:#F7931E;}
+	.st5{fill:#29ABE2;}
+	.st6{fill:#FF0000;}
+	.st7{fill:#666666;}
+	.st8{fill:none;stroke:#000000;stroke-width:4;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+</style>
+<g>
+	<rect x="459.5" y="424.5" width="702" height="469"/>
+	<path d="M1161,425v468H460V425H1161 M1162,424H459v470h703V424L1162,424z"/>
+</g>
+<g>
+	<polygon points="460.11,421.5 810.35,137.64 1160.59,421.5 	"/>
+	<path d="M810.35,138.29L1159.18,421H461.52L810.35,138.29 M810.35,137L458.7,422H1162L810.35,137L810.35,137z"/>
+</g>
+<g>
+	<rect x="919.5" y="177.5" width="75" height="152"/>
+	<path d="M994,178v151h-74V178H994 M995,177h-76v153h76V177L995,177z"/>
+</g>
+<g>
+	<rect x="779" y="772" class="st0" width="64" height="122"/>
+</g>
+<g>
+	<line class="st1" x1="810.5" y1="781.5" x2="810.5" y2="893.5"/>
+</g>
+<g>
+	<line class="st1" x1="810.5" y1="781.5" x2="810.5" y2="771.5"/>
+</g>
+<g>
+	<line class="st1" x1="778.5" y1="832.5" x2="842.5" y2="832.5"/>
+</g>
+<g>
+	<rect x="540.5" y="478.5" class="st2" width="125" height="125"/>
+	<path d="M665,479v124H541V479H665 M666,478H540v126h126V478L666,478z"/>
+</g>
+<g>
+	<rect x="540.5" y="675.5" class="st3" width="125" height="125"/>
+	<path d="M665,676v124H541V676H665 M666,675H540v126h126V675L666,675z"/>
+</g>
+<g>
+	<rect x="950.5" y="479.5" class="st4" width="125" height="125"/>
+	<path d="M1075,480v124H951V480H1075 M1076,479H950v126h126V479L1076,479z"/>
+</g>
+<g>
+	<rect x="952.5" y="677.5" class="st5" width="125" height="125"/>
+	<path d="M1077,678v124H953V678H1077 M1078,677H952v126h126V677L1078,677z"/>
+</g>
+<g>
+	<rect x="746.5" y="556.5" class="st6" width="127" height="177"/>
+	<path d="M873,557v176H747V557H873 M874,556H746v178h128V556L874,556z"/>
+</g>
+<g>
+	<polygon class="st7" points="732.46,556.5 809.62,479.21 886.79,556.5 	"/>
+	<path d="M809.62,479.92L885.59,556H733.66L809.62,479.92 M809.62,478.5L731.25,557H888L809.62,478.5L809.62,478.5z"/>
+</g>
+<g>
+	<line class="st8" x1="809.5" y1="555.5" x2="810.5" y2="733.5"/>
+</g>
+<line class="st8" x1="746.5" y1="644.5" x2="873.5" y2="644.5"/>
+<line class="st9" x1="602.5" y1="478.5" x2="602.5" y2="603.5"/>
+<line class="st9" x1="539.5" y1="539.5" x2="665.5" y2="539.5"/>
+<g>
+	<line class="st9" x1="1012.5" y1="478.5" x2="1012.5" y2="604.5"/>
+</g>
+<line class="st9" x1="949.5" y1="541.5" x2="1075.5" y2="541.5"/>
+<line class="st9" x1="1012.5" y1="676.5" x2="1012.5" y2="800.5"/>
+<line class="st8" x1="951.5" y1="739.5" x2="1075.5" y2="739.5"/>
+<line class="st9" x1="602.5" y1="676" x2="602.5" y2="801"/>
+<line class="st9" x1="538" y1="738.5" x2="664" y2="738.5"/>
+<line class="st1" x1="746" y1="556" x2="874" y2="557"/>
+</svg></div></body></html>""")
 
 
 # Commit changes to Datbase and Cleanup
