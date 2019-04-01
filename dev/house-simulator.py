@@ -55,8 +55,8 @@ middle = [0,0,0]	# st6
 
 cursor.execute("""SELECT * FROM windows;""")
 
+# Using fetchall(), pull the individual colors for each window
 for row in cursor.fetchall():
-	print("""<h1> %s </h1>""" % str(row))
 	if str(row[0]) == "top-left":
 		top_left[0] = int(row[1])
 		top_left[1] = int(row[2])
@@ -78,15 +78,12 @@ for row in cursor.fetchall():
 		middle[1] = int(row[2])
 		middle[2] = int(row[3])
 
-for config in top_right:
-	print("""<h1> %s </h1>""" % str(config))
-		
 
 # Print the house
 print("""
 	<div style="text-align:center;">
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1650 1080" style="margin-top:-90px; enable-background:new 0 0 1920 1080; width:70%;" xml:space="preserve">""")
+	 viewBox="0 0 1650 1080" style="margin-top:-90px; margin-bottom:-100px; enable-background:new 0 0 1920 1080; width:70%;" xml:space="preserve">""")
 
 print("""<style type="text/css">
 	.st0{fill:#603813;}
@@ -165,6 +162,21 @@ print("""<g>
 <line class="st9" x1="538" y1="738.5" x2="664" y2="738.5"/>
 <line class="st1" x1="746" y1="556" x2="874" y2="557"/>
 </svg></div></body></html>""")
+
+# Generate a form that will submit a HTTP for the following query/update
+print("""<h1 align="center">
+	<form  style="font-size:24px;" action="/cgi-bin/house-simulator.py" method="get">
+		Location:<br>
+		<input style="height:35px; width:200px;" type="text" name="location"><br>
+		Red:<br>
+		<input style="height:35px; width:200px;" type="text" name="red"><br>
+		Green:<br>
+		<input style="height:35px; width:200px;" type="text" name="green"><br>
+		Blue: <br>
+		<input style="height:35px; width:200px;" type="text" name="blue"><br>
+		<input style="height:100px; width:150px; padding-top: 50px; font-size:32px;" type="submit" value="Submit">
+	</form></h1>""")
+
 
 
 # Commit changes to Datbase and Cleanup
