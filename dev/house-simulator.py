@@ -265,10 +265,6 @@ print("""<g>
 
 # Generate a form that will submit a HTTP for the following query/update
 print("""
-	<p>	
-	<p align="center">
-		Testing
-	</p>
 	<h1 align="center">
 	
 	<form style="font-size:24px;" action="/cgi-bin/house-simulator.py" method="get">
@@ -281,7 +277,7 @@ print("""
 		Blue: <br>
 		<input style="height:35px; width:200px;" type="text" name="blue"><br>
 		<input style="height:100px; width:150px; padding-top: 50px; font-size:32px;" type="submit" value="Submit">
-	</form></h1></p>""")
+	</form></h1>""")
 
 
 
