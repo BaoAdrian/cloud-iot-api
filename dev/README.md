@@ -40,7 +40,7 @@ But in general for any instance, it should be the following (where IP_ADDR is th
 http://IP_ADDR/cgi-bin/welcome.py
 ```
 
-This should now reflect the live web application in your browser and any changes made within the instance will be immediately reflected in the web application.
+This should now reflect the live web application in your browser. Please see the section for setting up hardlinks between the scripts in the repo and the scripts inside the `cgi-bin` folder so that any changes made within the local repository in the instance will be immediately reflected on the webpage.
 
 
 ## Creating a dev environment within the instance
