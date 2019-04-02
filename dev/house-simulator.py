@@ -28,20 +28,40 @@ print("""<html>
 			<title> House Simulator </title>
 		</head>
 		<body>
-			<br/>
 			<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
 			<h2 align="center"> House Simulator </h2>
 			""")
 
 
-# Pull the status from the FORM
-location = form["location"].value
-r_conf = form["red"].value
-g_conf = form["green"].value
-b_conf = form["blue"].value
 
-# Execute UPDATE on database (note that it is a string)
-cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s;""",(r_conf, g_conf, b_conf, location))
+# Set default values prior to pulling from URL
+location = "all"
+r_conf = 0
+g_conf = 0
+b_conf = 0
+
+# Pull the status from the FORM if the exist
+if "location" in form:
+	location = form["location"].value
+
+if "red" in form:
+	r_conf = form["red"].value
+
+if "green" in form:
+	g_conf = form["green"].value
+
+if "blue" in form:
+	b_conf = form["blue"].value
+
+
+# Used by welcome script to initialize house with all white windows
+if location == "all":
+	# Execute UPDATE on database (note that it is a string)
+        cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s;""",(r_conf, g_conf, b_conf))
+else:
+	# Execute UPDATE on database (note that it is a string)
+	cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s;""",(r_conf, g_conf, b_conf, location))
+
 
 # Commit updated changes 
 conn.commit()
@@ -77,7 +97,6 @@ for row in cursor.fetchall():
 		middle[0] = int(row[1])
 		middle[1] = int(row[2])
 		middle[2] = int(row[3])
-
 
 # Print the house
 print("""
