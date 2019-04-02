@@ -11,7 +11,7 @@ There are three main parts for this application.
   <li> Python/HTML Web Application </li>
 </ol>
 
-This project will use Amazon AWS for the MySQL Database Instance and two EC2 Instances that will run the Apache Webserver for the Python/HTML application that will be installed into each individual instance. The Web Application that is generated through the webserver will be broadcast to specific IP Addresses that can be accessible via an web browser. Since we will be running two EC2 Instances running these Apache Webservers, we will only have two IP Addresses that we can access the application through.
+This project will utilize the Amazon AWS Platform to spin up two mirrored EC2 Instances running Apache Webserver and one RDS MySQL Database Instance serve as the backend data persistance for the the Python/HTML web application that will be cloned into each instance from this repository (dev folder). The Web Application that is generated through the webserver will be broadcasted to specific IP Addresses that can be accessible via a web browser. The CGI framework for Python is used to generate the HTML code for the various pages and more information on configuring that inside the instance can be found in the `README.md` inside the `dev` folder.
 
 
 
@@ -25,24 +25,22 @@ https://aws.amazon.com/iot-device-management/
 Maybe we can integrate one of these buttons once we get it working. Could do some cool stuff with it. https://aws.amazon.com/iotbutton/ 
 
 
-
-# Video Examples
-Here is a tutorial on connecting an IoT device and managing it using their dashboard. Not quite related to what we are trying to do since he is using JavaScript and some Edison device/ Robot Sphere but interesting to see how to interact with the console to 'develop' and 'test' the implementation.
-https://www.youtube.com/watch?v=_0us6NzlaoQ
-
-
-
 # Section Details
 <h3> Servers </h3>
-2 EC2 Instance that will have the python/html code installed with all dependencies on them and will point to the RDS DB Instance when connecting to MySQL Database. URL: https://aws.amazon.com/ec2/
+Two mirrored Amazon EC2 Instances running Apache Webservers will have our Web Application installed from this repository into each instance. Each instance will independently point to the RDS DB Instance when connecting to MySQL Database. 
+
+Reference: https://aws.amazon.com/ec2/
 
 <br/>
 
 
+The EC2 Instances used to run the application were the ones created from Project 2 with all configurations already set. SSH'd into the instance by running the follwing:
 
-Setting up the server (utilized the EC2 instance created for Project 2). SSH'd into by first changing directory to the location where my ```key-pair-name.pem```file was located. (Also assuming you have completed the necessary configs described when clicking ```Connect``` next to Instance Actions).
 
-Run ```ssh -i "key-pair-name.pem" ec2-user@<Public DNS (IPv4)>```
+```
+ssh -i /path/to/private-key.pem ec2-user@<Public DNS (IPv4)>
+```
+
 
 Once successfully inside the instance, ran the following install commands to configure the dependencies needed for this project:
 
@@ -53,22 +51,27 @@ Once successfully inside the instance, ran the following install commands to con
 ```sudo yum install python3-devel``` (Required prior to pip3 install command)<br/>
 ```sudo pip3 install mysqlclient```<br/>
 ```sudo yum install git```<br/>
-```sudo yum install MySQL-python```<br/>
+```sudo yum install MySQL-python``` (Used to interface with RDS DB Instance)<br/>
 
+Note that httpd is already installed within the linux-based instance so there are no further installation requirements to be done for the webservers. (See `dev` for webserver configuration for this project).
 
 <h3> Web application </h3> 
-HTML generated through python scripts using the CGI framework. 
+The web application will serve as a series of simulators of the application interfacing with IoT devices. The main goal with this project is to create an application that will allow for an easy introduction to interfacing with IoT devices, with our main focal point being Smart Lightbulbs.  
 Will break the development into stages...  
 
-- [ ] Simple button that controls on/off power for the bulb (amazon 'thing')
-- [ ] Querying the database for pre-set RBG values (maybe some rgb sliders) 
-- [ ] If possible, configure Amazon Alexa to have programmed commands for colors configs
+- [x] Welcome page that serves as a starting hub to our various services (scripts below)
+- [x] Simple button that controls on/off power for the bulb (on-off.py)
+- [x] Presenting user with pre-configured RGB settings attached to a table of buttons (color-table.py) 
+- [ ] Various sliders to configure RGB settings as well as opacity and brightness (sliders.py)
+= [x] Robust simulator that presents Scalable Vector Graphic of a house with various room in which the web application can interacty with individual rooms and set their RGB settings. (house-simulator.py)
+
+Resources used throughout the development process:
+
   
   
 <h3> Amazon MySQL DB </h3> 
   https://aws.amazon.com/getting-started/tutorials/create-mysql-db/
-- MySQL for database, connected via Amazon RDS to our instances (WIP).
-- Database will be its own instance.
+- Amazon RDS Database Instance that will serve as the backend between the two servers that point to it. Store the various tables used throughout the application for the various simulators used to interface with (at the moment) virtual IoT devices.
 
 <ul>  
   <li>Endpoint: project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com</li>
@@ -91,17 +94,18 @@ Database:
 Server:
 - [x] Successfully launch Amazon EC2 
 - [x] Install dependencies on the EC2 Instance (see above for steps to complete)
-- [ ] Install python application on EC2 instances
-  - [ ] Connect DB instance to EC2 instances   
+- [x] Install python application on EC2 instances
+- [x] Connect DB instance to EC2 instances   
 
 
 Web Application:
 - [x] HTML Mockup
-- [ ] CGI/Python application that generates HTML
-  - [ ] On/Off swith
-  - [ ] Table of RGB Configs & RGB Slider & Brightness/Saturation Slider (https://www.w3schools.com/howto/howto_js_rangeslider.asp)
-  - [ ] Possible integration with Amazon Alexa
-
+- [x] CGI/Python application that generates HTML
+  - [x] On/Off swith
+  - [x] Table of RGB Configs
+  - [ ] RGB/Opacity/Brightness Sliders (https://www.w3schools.com/howto/howto_js_rangeslider.asp)
+  - [x] House Simulator
 
 Miscellaneous:
-- [ ] Figure out if Amazon IoT Management API is required to handle communication between device and web application. (I.E. register device as 'thing' in the API and perform calls to database through interface.
+- [ ] Investigate integration with the Amazon IoT Core API to interact with IoT devices.
+EDIT: It appears as though the student account generated for the course does not have access to utilize this part of the AWS platform. Additionally, other resources for interacting with IoT devices required a Rasberry PI which we did not have at the time of completing this assignment.
