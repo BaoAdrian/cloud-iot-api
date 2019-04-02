@@ -53,6 +53,7 @@ Once successfully inside the instance, ran the following install commands to con
 ```sudo yum install git```<br/>
 ```sudo yum install MySQL-python``` (Used to interface with RDS DB Instance)<br/>
 
+Note that httpd is already installed within the linux-based instance so there are no further installation requirements to be done for the webservers. (See `dev` for webserver configuration for this project).
 
 <h3> Web application </h3> 
 The web application will serve as a series of simulators of the application interfacing with IoT devices. The main goal with this project is to create an application that will allow for an easy introduction to interfacing with IoT devices, with our main focal point being Smart Lightbulbs.  
@@ -62,7 +63,7 @@ Will break the development into stages...
 - [x] Simple button that controls on/off power for the bulb (on-off.py)
 - [x] Presenting user with pre-configured RGB settings attached to a table of buttons (color-table.py) 
 - [ ] Various sliders to configure RGB settings as well as opacity and brightness (sliders.py)
-= [ ] Robust simulator that presents Scalable Vector Graphic of a house with various room in which the web application can interacty with individual rooms and set their RGB settings. (house-simulator.py)
+= [x] Robust simulator that presents Scalable Vector Graphic of a house with various room in which the web application can interacty with individual rooms and set their RGB settings. (house-simulator.py)
 
 Resources used throughout the development process:
 
@@ -101,9 +102,8 @@ Web Application:
 - [x] HTML Mockup
 - [x] CGI/Python application that generates HTML
   - [x] On/Off swith
-  - [x] Table of RGB Configs & RGB Slider 
-  (https://www.w3schools.com/howto/howto_js_rangeslider.asp)
-  - [ ] RGB/Opacity/Brightness Sliders 
+  - [x] Table of RGB Configs
+  - [ ] RGB/Opacity/Brightness Sliders (https://www.w3schools.com/howto/howto_js_rangeslider.asp)
   - [x] House Simulator
 
 Miscellaneous:
