@@ -28,23 +28,26 @@ print("""<html>
 			<title> On-Off </title>
 		</head>
 		<body>
-			<br/>
 			<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
 			<h2 align="center"> On/Off </h2>
 			<br/>""")
 
+if "status" not in form:
+	# Execute UPDATE on database (note that it is a string)
+	cursor.execute("""SELECT * FROM power;""")
 
-# Pull the status from the FORM
-device_status = form["status"].value
+	for row in cursor.fetchall():
+        	device_status = row[0]	
 
-# Execute UPDATE on database (note that it is a string)
-cursor.execute("""UPDATE power SET status=%s;""",(device_status))
+else:
+	# Execute UPDATE on database (note that it is a string)
+	# Pull the status from the FORM
+	device_status = form["status"].value
+	cursor.execute("""UPDATE power SET status=%s;""",(device_status))
 
-# Typecast to int for corresponding html generation below generation
-device_status = int(device_status)
 
 # Generate html depending on the current state of device
-if device_status == 1:
+if int(device_status) == 1:
 	# Device currently ON. Generate page to reflect the currently ON state.
         print("""
                 <br/>
