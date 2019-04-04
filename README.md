@@ -3,6 +3,13 @@ Cloud-serviced web application aimed to manage and utilize Internet-of-Things de
 
 Specifications: https://lecturer-russ.appspot.com/classes/cs346/spring19/projects/proj02.pdf
 
+
+# Contributors
+Adrian Bao - https://github.com/BaoAdrian
+Mauricio Herrera - https://github.com/mauherrerag
+Ruben Tequida - https://github.com/rtequida21
+
+
 # Project Description
 There are three main parts for this application. 
 <ol>
