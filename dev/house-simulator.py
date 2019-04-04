@@ -40,32 +40,27 @@ r_conf = 0
 g_conf = 0
 b_conf = 0
 
-if "location" not in form and "red" not in form and "green" not in form and "blue" not in form:
-        # Query
+# Pull the status from the FORM if the exist
+if "location" in form:
+	location = form["location"].value
 
+if "red" in form:
+	r_conf = form["red"].value
+
+if "green" in form:
+	g_conf = form["green"].value
+
+if "blue" in form:
+	b_conf = form["blue"].value
+
+
+# Used by welcome script to initialize house with all white windows
+if location == "all":
+	# Execute UPDATE on database (note that it is a string)
+        cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s;""",(r_conf, g_conf, b_conf))
 else:
-        # Update
-        # Pull the status from the FORM if the exist
-        if "location" in form:
-                location = form["location"].value
-
-        if "red" in form:
-                r_conf = form["red"].value
-
-        if "green" in form:
-                g_conf = form["green"].value
-
-        if "blue" in form:
-                b_conf = form["blue"].value
-
-	# Used by welcome script to initialize house with all white windows
-	if location == "all":
-		# Execute UPDATE on database (note that it is a string)
-        	cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s;""",(r_conf, g_conf, b_conf))
-	else:
-		# Execute UPDATE on database (note that it is a string)
-		cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s;""",(r_conf, g_conf, b_conf, location))
-
+	# Execute UPDATE on database (note that it is a string)
+	cursor.execute("""UPDATE windows SET red=%s,green=%s,blue=%s WHERE location=%s;""",(r_conf, g_conf, b_conf, location))
 
 
 # Commit updated changes 
@@ -444,5 +439,4 @@ print("""
 conn.commit()
 cursor.close()
 conn.close()
-
 
