@@ -9,6 +9,7 @@ Adrian Bao - https://github.com/BaoAdrian <br>
 Mauricio Herrera - https://github.com/mauherrerag <br>
 Ruben Tequida - https://github.com/rtequida21 <br>
 
+<br>
 
 # Project Description
 There are three main parts for this application. 
@@ -20,6 +21,9 @@ There are three main parts for this application.
 
 This project will utilize the Amazon AWS Platform to spin up two mirrored EC2 Instances running Apache Webserver and one RDS MySQL Database Instance serve as the backend data persistance for the the Python/HTML web application that will be cloned into each instance from this repository (dev folder). The Web Application that is generated through the webserver will be broadcasted to specific IP Addresses that can be accessible via a web browser. The CGI framework for Python is used to generate the HTML code for the various pages and more information on configuring that inside the instance can be found in the `README.md` inside the `dev` folder.
 
+
+<br>
+<br>
 
 # Section Details
 ### Servers
@@ -77,15 +81,19 @@ Will break the development into stages...
 
 See the breakdown below of each individual page:
 
+<br>
 
 #### Welcome.py
 <p>
 This basic page serves as the central hub to the various "services" that our web application simulates. The user is presented with four buttons, each of which correspond to their own service (run by a python script). When each button is pressed, sends a HTTP redirect to the corresponding python script with NO parameters and generates an HTML based on a query of the database. 
 </p>
 
+<br>
+<br>
 
-#### On-off.py
-<img align = "right" src = "html-mockup/final-designs/on-off.png" width = 300" height = "400" hspace = "20" alt = "on-off.py" />
+
+#### On-off.py        
+  <img align = "right" src = "html-mockup/final-designs/on-off.png" width = "300" height = "380" hspace = "20" alt = "on-off.py" />
 <p>
 The simplest introduction that we could think of when integrating the various pieces of this project was turning a lightbulb on and off. We utilized a Scalable Vector Graphic (SVG) of a lightbulb that allowed for us to change the color (representive of the state) of the lightbulb. 
 
@@ -93,8 +101,11 @@ The simplest introduction that we could think of when integrating the various pi
 Upon initial loading of the script, the webpage is generated using the Query of the current state inside the database. The user is then presented with a button that controls the power of the lightbulb. Pressing the button will trigger an HTTP redirect that passes in a parameter, `status` that will be updated in the database when the webpage is loaded. Since HTML does not supported python functions to be triggered from button events, we utilized the parameters within the URL, i.e. forms, to ensure the corresponding variables were added to the URL for the following script to process.
 </p>
 
+<br>
+<br>
+
 #### Color-table.py
-<img align = "right" src = "html-mockup/final-designs/color-table.png" width = 300" height = "400" hspace = "20" alt = "color-table.py" />
+  <img align = "right" src = "html-mockup/final-designs/color-table.png" width = "300" height = "400" hspace = "20" alt = "color-table.py" />
 <p>
 The next simulator that we dove into after figuring out how to turn a device on and off was to change its color. For this specific simulator (and also used by `slider.py`) we created a seperate table within our database that keeps track of various RGB values (as well as some placeholders for attributes such as opacity and brightness). The script generates a 3x3 grid of colored buttons, each of which is the color that represents the RGB configurations that will be sent to the database (if pressed). 
 
@@ -102,21 +113,33 @@ The next simulator that we dove into after figuring out how to turn a device on 
 Similar to `on-off.py`, this script utilizes forms to pass arguments into the URL depending on which button is pressed. As a 'bonus' feature, we also added a button that has randomly generated RGB values that each time the webpage is loaded, a new configuration is created and displayed for the user to select. 
 </p>
 
+<br>
+<br>
+
 
 #### Slider.py
-<img align = "right" src = "html-mockup/final-designs/slider.png" width = 300" height = "400" hspace = "20" alt = "slider.py" />
+ <img align = "right" src = "html-mockup/final-designs/slider.png" width = "200" height = "300" hspace = "20" alt = "slider.py" />
 <p>
 As mentioned before, this simulator communicates with the same table used by the `color-tabele.py` script. Because of this, any modification made to the database from `color-table.py` will be immediately reflected if `slider.py` webpage is accessed. This simulator was a simple introduction into using sliders and forms to, once again, integrate HTTP/args within our database queries and updates. 
 </p>
 
+<br>
+<br>
+
 
 #### House-simulator.py
-<img align = "right" src = "html-mockup/final-designs/house-simulator.png" width = 300" height = "400" hspace = "20" alt = "house-simulator.py" />
+<img align = "right" src = "html-mockup/final-designs/house-simulator.png" width = "300" height = "400" hspace = "20" alt = "house-simulator.py" />
 <p>
 This simulator acts independently from the other scripts and is a bit more robust in its behavior. The idea for this project was to implement an application that could easily be ported to support physical IoT devices and this is the simulator that represents that idea. It presents the user with an SVG of a house that has five windows, each window corresponds to their own IoT device. The user may utilize the form at the bottom that allows for them to select a location and configure its RGB values. Once the user presses submit, the corresponding arguments are added to the URL and sent to the script that will process the query/update to the database when required. 
 
 Each input field has pre-set default values and can be left blank if the user chooses to do so. The `location` parameter supports individual windows (for example: `top-right` as well as `bottom-left`) but additionally supports the `all` argument that allows the user configure all the devices all at once. 
 </p>
+
+
+<br>
+<br>
+
+
 
 # Development - Milestones
 Database:
