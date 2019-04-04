@@ -15,21 +15,6 @@ print('<head>')
 print('<title>Welcome</title>')
 print('</head>')
 
-
-# Setup Connection to Database
-conn = MySQLdb.connect( host 	= 'project2-iot-lightbulb.ccdjm6mfovyw.us-west-1.rds.amazonaws.com',
-			user 	= 'Admin',
-			passwd 	= 'project2password',
-			db 	= 'project2db')
-
-cursor = conn.cursor()
-
-
-cursor.execute("""SELECT * FROM power;""")
-device_status = 0
-for row in cursor.fetchall():
-	device_status = row[0]
-
 print("""<body>
                 <br/>
                 <h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
@@ -54,7 +39,3 @@ print("""<body>
 
 print('</html>')
 
-# Commit changes to Datbase and Cleanup
-conn.commit()
-cursor.close()
-conn.close()
