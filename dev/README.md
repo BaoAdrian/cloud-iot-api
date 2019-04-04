@@ -95,31 +95,3 @@ mysql -u <USERNAME> -h <HOST/ENDPOINT> -p
 ```
 
 It will then prompt for the password and should end up inside the interactive shell for the mysql database.
-
-
-
-# Web Application Description
-
-This web applicatin is orchestrated by a series of python scripts that generate HTML for our various simulators. We begin our application with the `welcome.py` script which can be accessible by searching `http://<Public DNS>/cgi-bin/welcome.py`. This will present a webpage to the user with the 4 IoT interface simulators detailed below.
-
-
-## on-off.py
-
-This web page is the simplest of the simulators as it presents the user with a Scalable Vector Graphic (SVG) of a lightbulb in which the user can click a button to turn the lightbulb on and off. As will all of the simulators, this python scripts interfaces with the shared RDS DB Instance to query/update the specific `power` table inside of our MySQL Database.
-
-
-## color-table.py
-
-Our ultimate goal was to configure rgb settings for various devices that support those configurations so that is where color-table comes in. It will present the user with a 3x3 table of color configurations, one of which is randomly generated each time the page is loaded. The application will let the user press any button in the table and change the SVG to reflect that new color. It interfaces with the database, similar to the `on-off.py` script but instead, carries additional attributes: red, green, and blue. These range from 0 to 255 and control the `fill:rgb()` tag for the SVG.
-
-
-## sliders.py
-
-Under construction
-
-
-## house-simulator.py
-
-This simulator presents the user with an SVG of a house with five windows. Each window has its own `location` attribute that is used to interface with that specific "device". It simulates the idea of an application that can interface with a wide network of devices, it only requires the user to state which `location` they wish to target and what RGB configurations they would like to update. Performs the corresponding SQL operations depending on the HTTP variables that are passed through the URL using the HTML form. 
-
-
