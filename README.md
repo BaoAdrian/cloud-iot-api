@@ -11,7 +11,7 @@ Ruben Tequida - https://github.com/rtequida21 <br>
 
 
 ### Videos
-Introduction: https://www.youtube.com/watch?v=96-rTpchbnE
+Introduction: https://www.youtube.com/watch?v=96-rTpchbnE <br>
 Further Exploration: https://www.youtube.com/watch?v=RG9L3w1t6TM
 
 
