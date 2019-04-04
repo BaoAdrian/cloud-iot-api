@@ -9,12 +9,13 @@ Adrian Bao - https://github.com/BaoAdrian <br>
 Mauricio Herrera - https://github.com/mauherrerag <br>
 Ruben Tequida - https://github.com/rtequida21 <br>
 
-<br>
-
 
 ### Videos
 Introduction: https://www.youtube.com/watch?v=96-rTpchbnE
 Further Exploration: https://www.youtube.com/watch?v=RG9L3w1t6TM
+
+
+<br>
 
 
 # Project Description
