@@ -5,9 +5,9 @@ Specifications: https://lecturer-russ.appspot.com/classes/cs346/spring19/project
 
 
 # Contributors
-Adrian Bao - https://github.com/BaoAdrian
-Mauricio Herrera - https://github.com/mauherrerag
-Ruben Tequida - https://github.com/rtequida21
+Adrian Bao - https://github.com/BaoAdrian <br>
+Mauricio Herrera - https://github.com/mauherrerag <br>
+Ruben Tequida - https://github.com/rtequida21 <br>
 
 
 # Project Description
