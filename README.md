@@ -85,6 +85,7 @@ This basic page serves as the central hub to the various "services" that our web
 
 
 #### On-off.py
+<img align = "right" src = "html-mockup/final-designs/on-off.png" width = 300" height = "400" hspace = "20" alt = "on-off.py" />
 <p>
 The simplest introduction that we could think of when integrating the various pieces of this project was turning a lightbulb on and off. We utilized a Scalable Vector Graphic (SVG) of a lightbulb that allowed for us to change the color (representive of the state) of the lightbulb. 
 
@@ -93,6 +94,7 @@ Upon initial loading of the script, the webpage is generated using the Query of 
 </p>
 
 #### Color-table.py
+<img align = "right" src = "html-mockup/final-designs/color-table.png" width = 300" height = "400" hspace = "20" alt = "color-table.py" />
 <p>
 The next simulator that we dove into after figuring out how to turn a device on and off was to change its color. For this specific simulator (and also used by `slider.py`) we created a seperate table within our database that keeps track of various RGB values (as well as some placeholders for attributes such as opacity and brightness). The script generates a 3x3 grid of colored buttons, each of which is the color that represents the RGB configurations that will be sent to the database (if pressed). 
 
@@ -102,12 +104,14 @@ Similar to `on-off.py`, this script utilizes forms to pass arguments into the UR
 
 
 #### Slider.py
+<img align = "right" src = "html-mockup/final-designs/slider.png" width = 300" height = "400" hspace = "20" alt = "slider.py" />
 <p>
 As mentioned before, this simulator communicates with the same table used by the `color-tabele.py` script. Because of this, any modification made to the database from `color-table.py` will be immediately reflected if `slider.py` webpage is accessed. This simulator was a simple introduction into using sliders and forms to, once again, integrate HTTP/args within our database queries and updates. 
 </p>
 
 
 #### House-simulator.py
+<img align = "right" src = "html-mockup/final-designs/house-simulator.png" width = 300" height = "400" hspace = "20" alt = "house-simulator.py" />
 <p>
 This simulator acts independently from the other scripts and is a bit more robust in its behavior. The idea for this project was to implement an application that could easily be ported to support physical IoT devices and this is the simulator that represents that idea. It presents the user with an SVG of a house that has five windows, each window corresponds to their own IoT device. The user may utilize the form at the bottom that allows for them to select a location and configure its RGB values. Once the user presses submit, the corresponding arguments are added to the URL and sent to the script that will process the query/update to the database when required. 
 
