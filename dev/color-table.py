@@ -27,6 +27,27 @@ cursor = conn.cursor()
 # Set up form
 form = cgi.FieldStorage()
 
+
+r_conf = 0
+g_conf = 0
+b_conf = 0
+
+if "red" not in form and "green" not in form and "blue" not in form:
+	# Query
+	cursor.execute("""SELECT * FROM light_status;""")
+	for row in cursor.fetchall():
+		r_conf = row[0]
+		g_conf = row[1]
+		b_conf = row[2]
+else:
+	# Update
+	r_conf = form["red"].value
+	g_conf = form["green"].value
+	b_conf = form["blue"].value
+
+	cursor.execute("""UPDATE light_status SET red=%s, green=%s, blue=%s;""",(r_conf, g_conf, b_conf))
+
+
 # Generate RGB for random color
 rand_red = random.randint(0, 255)
 rand_green = random.randint(0, 255)
@@ -45,12 +66,6 @@ turq_config = [0,206,209]
 maroon_config = [128,0,0]
 random_config = [rand_red, rand_green, rand_blue]
 
-# Analyze the form and update database
-r_conf = form["red"].value
-g_conf = form["green"].value
-b_conf = form["blue"].value
-
-cursor.execute("""UPDATE light_status SET red=%s, green=%s, blue=%s;""",(r_conf, g_conf, b_conf))
 
 # Print lightbulb
 print("""<body>

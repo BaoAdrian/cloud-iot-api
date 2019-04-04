@@ -33,15 +33,12 @@ print("""<html>
 			<br/>""")
 
 if "status" not in form:
-	# Execute UPDATE on database (note that it is a string)
 	cursor.execute("""SELECT * FROM power;""")
 
 	for row in cursor.fetchall():
         	device_status = row[0]	
 
 else:
-	# Execute UPDATE on database (note that it is a string)
-	# Pull the status from the FORM
 	device_status = form["status"].value
 	cursor.execute("""UPDATE power SET status=%s;""",(device_status))
 
