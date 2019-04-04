@@ -29,8 +29,9 @@ print("""<html>
 		</head>
 		<body>
 			<h1 align="center"> Cloud Computing - Project 2 - IoT Web Application</h1>
+<button type="button" onclick="window.location.href = 'http://%s/cgi-bin/welcome.py';">Home</button>
 			<h2 align="center"> On/Off </h2>
-			<br/>""")
+			<br/>"""%ip.IP_ADDR)
 
 if "status" not in form:
 	cursor.execute("""SELECT * FROM power;""")
