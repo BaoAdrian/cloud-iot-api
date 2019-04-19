@@ -1,8 +1,6 @@
 # Cloud-Based IoT Web API
 Cloud-serviced web application aimed to manage and utilize Internet-of-Things devices using Python, Amazon AWS, and a MySQL Database.
 
-Specifications: https://lecturer-russ.appspot.com/classes/cs346/spring19/projects/proj02.pdf
-
 
 # Contributors
 Adrian Bao - https://github.com/BaoAdrian <br>
