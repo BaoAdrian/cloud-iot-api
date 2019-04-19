@@ -3,9 +3,9 @@ Cloud-serviced web application aimed to manage and utilize Internet-of-Things de
 
 
 # Contributors
-Adrian Bao - https://github.com/BaoAdrian <br>
-Mauricio Herrera - https://github.com/mauherrerag <br>
-Ruben Tequida - https://github.com/rtequida21 <br>
+[Adrian Bao](https://github.com/BaoAdrian) <br>
+[Mauricio Herrera](https://github.com/mauherrerag) <br>
+[Ruben Tequida](https://github.com/rtequida21) <br>
 
 
 ### Videos
